@@ -1,0 +1,21 @@
+.MobileHeader
+	position fixed
+	z-index 100
+	top 0
+	right 0
+	left 0
+	display grid
+	grid-template-columns auto auto
+	justify-content space-between
+	align-items center
+	// grid-template-columns 80px 1fr
+	min-height 80px
+	padding-right 20px
+	background $info-light
+	visibility hidden
+	opacity 0
+	// transition all .3s
+	
+	&-visible
+		visibility visible
+		opacity 1

@@ -1,0 +1,70 @@
+.ObjectCard
+	position relative
+	max-width 525px
+	border 1px solid $border-color
+	background $light
+	transition box-shadow .3s
+	
+	&:hover
+		// box-shadow 0 0 11px rgb(33 33 33 / 20%)
+		box-shadow 0 0 11px $object-shadow-color
+	
+	&_label
+		position absolute
+		z-index 10
+		top 10px
+		left 10px
+		text-shadow 2px 2px 4px $object-text-shadow-color
+		color $light
+	
+	&_textWrapper
+		display grid
+		grid-template-columns 100%
+		padding 23px 16px 12px
+		border-bottom 1px solid $border-color
+	
+	&_title
+		margin-bottom 7px
+		font-size 15px
+		line-height 1.467
+		
+		&:hover
+			color $info-dark
+		
+		& > a
+			color $primary
+			text-decoration none
+			
+			&:hover
+				color $info-dark
+	
+	&_description
+		margin-bottom 3px
+		padding-right 10px
+		padding-left 13px
+		line-height 1.467
+		
+		& > p:last-child
+			margin-bottom 0
+	
+	&_moreLink
+		justify-self end
+		margin-right 5px
+		color $object-link
+		font-size 14px
+		text-decoration none
+		
+		&:hover
+			color $object-link-hover
+	
+	&_characteristics
+		margin 27px 15px 7px
+	
+	&_prices
+		margin 0 52px 4px 30px
+	
+	&_id
+		margin-bottom 20px
+		margin-left 16px
+		color $pastel
+		font-size 18px 
