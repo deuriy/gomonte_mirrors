@@ -1,0 +1,25 @@
+.FilterMenuTrigger
+	display inline-grid
+	grid-template-columns 1fr auto
+	align-items center
+	// gap 8px
+	gap 28px
+	padding 16px 10px 16px 20px
+	font-size 14px
+	color $secondary
+	text-decoration none
+	
+	// &::after
+	// 	content "\f107"
+	// 	border none
+	// 	font-family FontAwesome
+		
+	&::after
+		content "\f107"
+		font normal normal normal 14px/1 FontAwesome
+		border none
+		color darken($light, 25)
+	
+	&:hover,
+	&:focus
+		color $secondary

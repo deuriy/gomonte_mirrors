@@ -1,2 +1,66 @@
-.MobilFilter
+.MobileFilter
+	height 100vh
+	padding-right 15px
+	padding-left 15px
 	background $info-light
+	
+	&_header
+		display grid
+		grid-template-columns auto auto
+		justify-content space-between
+		align-items center
+		margin-bottom 15px
+	
+	&_menuHamburger
+		margin-left -15px
+	
+	&_closeBtn
+		height 42px
+		padding 0
+		border none
+		outline none
+		color lighten($secondary, 30%)
+		background transparent
+		font-size 42px
+	
+	&_items
+		display grid
+		grid-template-columns 100%
+		gap 18px
+	
+	&_item
+		&-twoCol
+			display grid
+			grid-template-columns 1fr 1fr
+	
+	&_formLabel
+		margin-bottom 8px
+		font-size 14px
+		color $filter-link
+	
+	&_formText
+		height 40px
+		width 100%
+		padding-right 10px
+		padding-left 10px
+		border 1px solid $object-id-color
+		outline none
+		border-radius 3px
+		background rgba($border-color, .5)
+	
+	&_actions
+		display grid
+		grid-template-columns auto auto
+		justify-content end
+		margin-top 30px
+	
+	&_btn
+		width 150px
+		height 40px
+		border 1px solid $secondary
+		color $filter-link
+		font-size 14px
+		
+		& > i
+			margin-right 10px
+			color $primary

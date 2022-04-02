@@ -1,0 +1,31 @@
+.BtnInfo
+	display inline-grid
+	// padding .968em 2.15em
+	padding 0.9375em 2.0625em
+	border-radius 5px
+	background $info
+	color $light
+	border none
+	outline none
+	font-size 16px
+	text-decoration none
+	text-align center
+	transition all .25s
+	
+	&:hover,
+	&:focus
+		color $light
+		background darken($info, 10%)
+	
+	&-uppercase
+		text-transform uppercase
+	
+	&-search
+		display inline-grid
+		align-items center
+		gap 10px
+		grid-template-columns auto 1fr
+		
+		&::before
+			content '\f002'
+			font-family FontAwesome

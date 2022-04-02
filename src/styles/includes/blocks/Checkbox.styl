@@ -1,0 +1,29 @@
+.Checkbox		
+	&_input
+		position absolute
+		clip rect(0, 0, 0, 0)
+		
+		&:checked ~ .Checkbox_label::before
+			content "\f00c"
+	
+	&_label
+		display grid
+		grid-template-columns auto 1fr
+		// align-items flex-start
+		align-items center
+		padding 6px 0
+		column-gap 10px
+		cursor pointer
+		font-size 13px
+		line-height 1
+		color $filter-link
+		
+		&::before
+			content ""
+			width 15px
+			height 15px
+			border 1px solid $checkbox-border-color
+			background-color $light
+			color $info
+			font normal normal normal 13px/1 'FontAwesome'
+			transition all .4s ease

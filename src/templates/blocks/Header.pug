@@ -1,7 +1,56 @@
 .Header
-	button(type="button" data-bs-toggle="offcanvas" data-bs-target="#MobileSidebar" aria-controls="MobileSidebar").MenuHamburger.Header_menuHamburger
-		i.fa.fa-bars
-	.Logo.Header_logo
-		a(href="/").Logo_link
-			img(src="/img/logo.webp" title="На главную").Logo_img
-	a(href="tel:+38267214405").Phone.Header_phone +382 67 214 405
+	.container
+		.Header_wrapper
+			button(type="button" data-bs-toggle="offcanvas" data-bs-target="#MobileSidebar" aria-controls="MobileSidebar").MenuHamburger.Header_menuHamburger.hidden-xlPlus
+				i.fa.fa-bars
+			.Logo.Header_logo
+				a(href="/").Logo_link
+					img(src="/img/logo.webp" title="На главную").Logo_img
+			.MainMenu.Header_mainMenu.hidden-xlMinus
+				ul.MainMenu_menu
+					li.MainMenu_item.MainMenu_item-parent
+						a(href="/rent.html").MainMenu_link Аренда Жилья
+						ul.MainMenu_subMenu
+							li.MainMenu_item
+								a(href="#").MainMenu_link Посуточная
+							li.MainMenu_item
+								a(href="#").MainMenu_link Круглый Год
+							li.MainMenu_item
+								a(href="#").MainMenu_link До сезона
+					li.MainMenu_item
+						a(href="/rent.html").MainMenu_link Недвижимость
+					li.MainMenu_item
+						a(href="/rent.html").MainMenu_link Веб-Камера
+					li.MainMenu_item
+						a(href="/rent.html").MainMenu_link О Нас
+			a(href="tel:+38267214405").Phone.Header_phone
+				i.fa.fa-phone.hidden-xlMinus
+				span.Phone_text +382 67 214 405
+			.LanguageSwitcher.Header_languageSwitcher.dropdown.hidden-xlMinus
+				a(href="#" role="button" id="languageSwitcherLink" data-bs-toggle="dropdown" aria-expanded="false").Language.LanguageSwitcher_toggle.dropdown-toggle
+					img(src="/img/lang/desktop/lang-ru.webp").Language_icon
+					span.Language_text Русский
+				ul.LanguageSwitcher_list.dropdown-menu(aria-labelledby="languageSwitcherLink")
+					li
+						a(href="#").LanguageSwitcher_item.dropdown-item
+							img(src="/img/lang/desktop/lang-me.webp").Language_icon
+							span.Language_text Crnogorski
+					li
+						a(href="#").LanguageSwitcher_item.dropdown-item
+							img(src="/img/lang/desktop/lang-ru.webp").Language_icon
+							span.Language_text Русский
+					li
+						a(href="#").LanguageSwitcher_item.dropdown-item
+							img(src="/img/lang/desktop/lang-en.webp").Language_icon
+							span.Language_text English
+					li
+						a(href="#").LanguageSwitcher_item.dropdown-item
+							img(src="/img/lang/desktop/lang-tr.webp").Language_icon
+							span.Language_text Turkish
+
+
+
+
+
+
+

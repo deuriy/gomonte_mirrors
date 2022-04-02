@@ -1,0 +1,30 @@
+.LanguageSwitcher
+	&_list
+		top 24px !important
+		// margin-top 25px
+		padding 0
+	
+	&_item
+		display inline-grid
+		grid-template-columns auto 1fr
+		align-items center
+		gap 10px
+		padding 14px 10px
+		border-bottom 1px solid $border-color
+		border-radius 4px
+		font-size 13px
+		color $secondary
+		transition none
+		
+		&:focus,
+		&:hover
+			color $border-color
+			background-color darken($info, 10)
+			// background-color lighten($info-dark, 20)
+	
+	&_toggle
+		&::after
+			content "\f107"
+			font normal normal normal 14px/1 FontAwesome
+			border none
+			color darken($light, 25)

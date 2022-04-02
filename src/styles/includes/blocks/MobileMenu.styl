@@ -5,15 +5,26 @@
 		padding-left 0
 	
 	&_item
-		&-hasChild
+		&-parent
+			max-height 51px
+			overflow hidden
+			transition all .7s linear
+			
 			& > .MobileMenu_link
 				position relative
 				
-				&:after
+				&::after
 					content "\f107"
 					position absolute
 					right 15px
 					font-family FontAwesome
+					transition all .15s linear
+		
+		&-expanded
+			max-height 500px
+			
+			& > .MobileMenu_link::after
+				transform rotate(180deg)
 		
 	&_link
 		display block
@@ -24,12 +35,11 @@
 		line-height 1.53846
 		text-decoration none
 		
-		&:hover,
-		&:focus
+		&:hover
 			color $light
 			background $mobile-menu-link-hover-bg
 	
-	&_subMenu
+	&_subMenu		
 		.MobileMenu_link
 			padding-left 45px
 			line-height 0.6

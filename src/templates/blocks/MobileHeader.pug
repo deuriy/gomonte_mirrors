@@ -1,6 +1,6 @@
-.MobileHeader
-	button(type="button").MenuHamburger
+.MobileHeader.hidden-xlPlus
+	button(type="button" data-bs-toggle="offcanvas" data-bs-target="#MobileSidebar" aria-controls="MobileSidebar").MenuHamburger
 		i.fa.fa-bars
-	a(href="#").FilterLink
+	a(href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#MobileFilter" aria-controls="MobileFilter").FilterLink
 		i.fa.fa-cog
 		span Фильтры

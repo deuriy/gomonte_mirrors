@@ -1,0 +1,49 @@
+.RadioButton	
+	&:hover
+		.RadioButton_label::before
+			border-color $chocolate
+	
+	&_input
+		position absolute
+		clip rect(0, 0, 0, 0)
+		
+		&:checked ~ .RadioButton_label::after
+			background-color $radio-circle-color
+	
+	&_label
+		position relative
+		display grid
+		grid-template-columns auto 1fr
+		align-items center
+		column-gap 8px
+		cursor pointer
+		font-size 13px
+		line-height 1
+		color $filter-link
+		
+		&::before
+			content ""
+			flex-shrink 0
+			width 13px
+			height 13px
+			border 1px solid $radio-circle-color
+			border-radius 50%
+			background-color $light
+			background-position center center
+			background-repeat no-repeat
+			background-size 12px auto
+			transition all .4s ease
+		
+		&::after
+			content ""
+			position absolute
+			top 4px
+			left 4px
+			width 5px
+			height 5px
+			border-radius 50%
+			background-color $light
+	
+	&_checkboxList
+		margin-top 10px
+		margin-left 30px

@@ -1,8 +1,10 @@
+import $ from "jquery";
 import Swiper, { Navigation, Pagination, Lazy } from 'swiper';
 import Offcanvas from '../../node_modules/bootstrap/js/src/offcanvas';
+import Dropdown from '../../node_modules/bootstrap/js/src/dropdown';
 
-console.log(Offcanvas);
-
+// console.log(Offcanvas);
+console.log(Dropdown);
 
 function checkMobileHeaderPosition (header, mobileHeader) {
 	let headerHeight = header.offsetHeight;
@@ -14,6 +16,20 @@ function checkMobileHeaderPosition (header, mobileHeader) {
 	}
 }
 
+function checkDependentRadio (form) {
+	if (!form) return;
+
+	let parentRadio = form.querySelectorAll('[data-parent-radio]');
+
+	parentRadio.forEach(parentRadioItem => {
+		let dependentFields = form.querySelectorAll(`[data-dependent-field="${parentRadioItem.dataset.parentRadio}"]`);
+
+		dependentFields.forEach(dependentField => {
+			dependentField.hidden = !parentRadioItem.checked;
+		});
+	});
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 	let windowWidth = document.documentElement.clientWidth;
 	let menuHamburger = document.querySelector('.MenuHamburger');
@@ -21,6 +37,66 @@ document.addEventListener('DOMContentLoaded', function () {
 	let mobileHeader = document.querySelector('.MobileHeader');
 	// let mobileSidebar = document.querySelector('.MobileSidebar');
 	let wrapper = document.querySelector('.Wrapper');
+	let mobileFilterForm = document.querySelector('.MobileFilter_form');
+
+	document.addEventListener('click', function (e) {
+		let parentMobileMenuItem = e.target.closest('.MobileMenu_item-parent');
+
+		if (!parentMobileMenuItem) return;
+
+		parentMobileMenuItem.classList.toggle('MobileMenu_item-expanded');
+
+		e.preventDefault();
+	});
+
+	checkDependentRadio(mobileFilterForm);
+
+	mobileFilterForm.querySelectorAll('input[type="radio"]').forEach(mobileFilterFormRadio => {
+		mobileFilterFormRadio.addEventListener('change', function (e) {
+			checkDependentRadio(mobileFilterForm);
+		});
+	});
+
+	// $(document).on('click.bs.dropdown.data-api', '.keep-open', function (e) {
+	//   e.stopPropagation();
+	// });
+
+	// $(document).on('click', function (e) {
+	// 	console.log('Click!');
+	// });
+
+	// document.addEventListener('click', function (e) {
+	// 	let filterElementDropdown = e.target.closest('.FilterElementDropdown');
+
+	// 	if (!filterElementDropdown) return;
+
+	// 	// console.log(filterElementDropdown);
+	// 	// filterElementDropdown.classList.add('show');
+	// 	// alert('Added!');
+
+	// 	e.stopPropagation();
+	// });
+
+	$('.FilterElementDropdown').on('click', function (event) {
+    event.stopPropagation();
+	});
+
+	// jQuery(document).on('click.bs.dropdown.data-api', '.keep-open', function (e) {
+	//   e.stopPropagation();
+	// });
+
+	// document.addEventListener('change', function (e) {
+	// 	let bedroomsNumberSwitcher = e.target.closest('.Switch_input[name="bedrooms_number"]');
+
+	// 	if (!bedroomsNumberSwitcher) return;
+
+	// 	console.log(bedroomsNumberSwitcher);
+
+	// 	if (bedroomsNumberSwitcher.value == 'all') {
+	// 		let otherCheckedSwitchers = bedroomsNumberSwitcher.closest('.Switches').querySelectorAll('.Switch_input[name="bedrooms_number"]:checked');
+	// 		console.log(otherCheckedSwitchers);
+	// 	}
+	// });
 
 	// document.addEventListener('click', function (e) {
 	// 	let menuHamburger = e.target.closest('.MenuHamburger');

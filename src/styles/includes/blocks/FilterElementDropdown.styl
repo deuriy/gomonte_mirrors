@@ -1,0 +1,38 @@
+.FilterElementDropdown
+	padding 8px 15px
+	
+	&::after
+		content ""
+		position absolute
+		z-index -1
+		top -6px
+		left 19px
+		width 11px
+		height 11px
+		border-left 1px solid #ddd
+		background $light
+		transform rotate(45deg)
+		
+	&_item
+		// margin-bottom 8px
+		padding 10px 0
+		
+		&:last-child
+			margin-bottom 0
+		
+		&:hover,
+		&:active
+			background $light
+		
+		&-hasChild
+			padding-bottom 0
+	
+	&_fields
+		display grid
+		grid-template-columns 146px 146px
+		gap 13px
+	
+	&-checkboxList
+		padding-top 0
+		padding-right 0
+		padding-bottom 0

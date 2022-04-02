@@ -1,0 +1,15 @@
+.Switches
+	display grid
+	grid-template-columns repeat(auto-fit, minmax(70px, 1fr))
+	
+	&_item
+		.Switch_label
+			border 1px solid $object-id-color
+			border-left none
+		
+		&:first-child
+			.Switch_label
+				border-left 1px solid $object-id-color
+	
+	&-bedrooms
+		grid-template-columns 20% 35% 15% 15% 15%

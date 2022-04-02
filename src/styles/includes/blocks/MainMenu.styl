@@ -1,1 +1,68 @@
-// .MainMenu
+.MainMenu
+	&_menu,
+	&_subMenu
+		list-style none
+		margin-bottom 0
+		padding-left 0
+	
+	&_menu
+		display flex
+		height 100%
+	
+	&_item
+		position relative
+		font-size 16px
+		
+		&-parent:hover
+			.MainMenu_subMenu
+				top 100%
+				visibility visible
+				opacity 1
+	
+	&_link
+		display grid
+		align-items center
+		height 100%
+		// padding 0 20px
+		padding 0 19px
+		text-decoration none
+		color $primary 
+		
+		&:hover
+			color $info 
+	
+	&_subMenu
+		position absolute
+		top calc(100% + 30px)
+		left 50%
+		transform translateX(-50%)
+		width 220px
+		padding 3px 0
+		border-radius 5px
+		background $light
+		box-shadow 0 0 11px $object-shadow-color
+		opacity 0
+		visibility hidden
+		transition all .25s ease
+		
+		&::before,
+		&::after
+			content ""
+			position absolute
+			bottom 100%
+			left 50%
+			transform translateX(-50%)
+		
+		&::before
+			border 11px solid transparent
+			border-bottom-color darken($light, 15)
+			
+		&::after
+			border 10px solid transparent
+			border-bottom-color $light
+		
+		.MainMenu_link
+			padding 10px 13px
+			
+			&:hover
+				color $info

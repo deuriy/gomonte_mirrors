@@ -6,13 +6,23 @@
 	color $light
 	border none
 	outline none
-	// font-size 14px
+	font-size 15px
 	text-decoration none
 	text-align center
+	transition all .25s
 	
 	&:hover,
 	&:focus
 		color $light
+		background darken($success, 15%)
 	
-	&-block
+	&-fullWidth
 		width 100%
+	
+	&-rounded
+		border-radius 30px
+	
+	&-services
+		@media $lgPlus
+			padding 10px 20px
+			font-size 14px

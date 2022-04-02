@@ -1,1 +1,21 @@
-// .Banner
+.Banner
+  min-height 160px
+  background-position center -123px
+  background-repeat no-repeat
+  background-size cover
+  
+  @media $lgPlus
+    min-height 250px
+    // background-position center -33px
+    background-position center center
+    
+  @media $xlPlus
+    display grid
+    // place-content center
+    align-content center
+    min-height 500px
+  
+  &_filter
+    @media $xlPlus
+      margin-top 51px
+      // margin-left -10px

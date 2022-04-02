@@ -1,3 +1,98 @@
-form(action="#").MobileFilter
-	.MobileFilter_item
-		.MobileFilter_itemContent
+.MobileFilter.offcanvas.offcanvas-top#MobileFilter
+	.MobileFilter_header
+		button(type="button" data-bs-toggle="offcanvas" data-bs-target="#MobileSidebar" aria-controls="MobileSidebar").MenuHamburger.MobileFilter_menuHamburger
+			i.fa.fa-bars
+		button(type="button" data-bs-dismiss="offcanvas" aria-label="Close").MobileFilter_closeBtn
+			i.fa.fa-times-circle
+	.MobileFilter_body
+		form(action="#").MobileFilter_form
+			.MobileFilter_items
+				.MobileFilter_item
+					.Switches
+						.Switch.Switches_item
+							input(type="radio" name="action_type" value="buy" id="buy" checked).Switch_input
+							label(for="buy").Switch_label Купить
+						.Switch.Switches_item
+							input(type="radio" name="action_type" value="rent" id="rent" data-parent-radio="action_type").Switch_input
+							label(for="rent").Switch_label Снять
+				.MobileFilter_item(data-dependent-field="action_type")
+					.Switches
+						.Switch.Switches_item
+							input(type="radio" name="period" value="year" id="year" checked).Switch_input
+							label(for="year").Switch_label Год
+						.Switch.Switches_item
+							input(type="radio" name="period" value="all_summer" id="all_summer").Switch_input
+							label(for="all_summer").Switch_label Всё лето
+						.Switch.Switches_item
+							input(type="radio" name="period" value="daily" id="daily").Switch_input
+							label(for="daily").Switch_label Посуточно
+				.MobileFilter_item
+					select(name="property_type").Select
+						option(value="all") Все виды
+						option(value="apartments") Квартиру
+						option(value="villa") Дом/Вилла
+						option(value="land") Земельный участок
+						option(value="commercial-premises") Коммерческую нед.
+				.MobileFilter_item
+					select(name="city").Select
+						option(value="all") Все города
+						option(value="bar") Bar
+						option(value="becici") Becici
+						option(value="bigovo") Бигово
+						option(value="blizikuce") Blizikuce
+						option(value="budva") Budva
+						option(value="buljarica") Buljarica
+						option(value="dobrota") Доброта
+						option(value="drobni-pesak") Дробни песак
+						option(value="dzhenovichi") Дженовичи
+						option(value="herceg_novi") Herceg Novi
+						option(value="kamenovo") Kamenovo
+						option(value="kotor") Kotor
+						option(value="krashichi") Крашичи
+						option(value="krimovica") Krimovica
+						option(value="lastva") Lastva
+						option(value="lepetane") Лепетане
+						option(value="lushtica") Луштица
+						option(value="petrovac") Petrovac
+						option(value="podgorica") Podgorica
+						option(value="prchan") Прчан
+						option(value="przno-milocer") Przno-Milocer
+						option(value="radanovici") Radanovici
+						option(value="rafailovici") Rafailovici
+						option(value="rezevici") Rezevici
+						option(value="risan") Risan
+						option(value="seoce") Seoce
+						option(value="stoliv") Stoliv
+						option(value="sutomore") Sutomore
+						option(value="sveti-stefan") Sveti Stefan
+						option(value="tivat") Tivat
+						option(value="zabljak") Zabljak
+				.MobileFilter_item.MobileFilter_item-twoCol
+					.MobileFilter_formTextWrapper
+						input(type="text" name="price_from" placeholder="Цена от").MobileFilter_formText
+					.MobileFilter_formTextWrapper
+						input(type="text" name="price_to" placeholder="Цена до").MobileFilter_formText
+				.MobileFilter_item
+					label(for="bedrooms_number").MobileFilter_formLabel Количество спален
+					.Switches.Switches-bedrooms
+						.Switch.Switches_item
+							input(type="checkbox" name="bedrooms_number" value="all" id="all" checked).Switch_input
+							label(for="all").Switch_label Все
+						.Switch.Switches_item
+							input(type="checkbox" name="bedrooms_number" value="studio" id="studio").Switch_input
+							label(for="studio").Switch_label Студия
+						.Switch.Switches_item
+							input(type="checkbox" name="bedrooms_number" value="one" id="one").Switch_input
+							label(for="one").Switch_label 1
+						.Switch.Switches_item
+							input(type="checkbox" name="bedrooms_number" value="two" id="two").Switch_input
+							label(for="two").Switch_label 2
+						.Switch.Switches_item
+							input(type="checkbox" name="bedrooms_number" value="three" id="three").Switch_input
+							label(for="three").Switch_label 3+
+			.MobileFilter_actions
+				button(type="reset").MobileFilter_btn Очистить
+				button(type="submit").MobileFilter_btn
+					i.fa.fa-search
+					.
+						Искать

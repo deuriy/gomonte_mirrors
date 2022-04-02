@@ -1,7 +1,16 @@
 .Header
-	padding-top 10px
-	padding-bottom 5px
-	text-align center
+	// padding-top 10px
+	// padding-bottom 5px
+	
+	@media $xlMinus
+		text-align center
+	
+	&_wrapper
+		@media $xlPlus
+			display grid
+			grid-template-columns auto 1fr auto auto
+			align-items center
+			min-height 90px
 	
 	&_menuHamburger
 		position absolute
@@ -9,7 +18,25 @@
 		left 0
 	
 	&_logo
+		margin-top 10px
 		margin-bottom 13px
+	
+	&_mainMenu
+		justify-self end
+		align-self stretch
+		
+		@media $xlPlus
+			margin-right 5px
 	
 	&_phone
 		margin-right 10px
+		
+		@media $xlMinus
+			margin-bottom 5px
+			
+		@media $xlPlus
+			margin-right 20px
+	
+	&_languageSwitcher
+		@media $xlPlus
+			margin-right -25px
