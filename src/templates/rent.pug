@@ -1,0 +1,1482 @@
+extends layouts/base
+
+block content
+  .container
+    .ObjectsPage
+      .row
+        .col-12
+          h1.PageTitle.ObjectsPage_title Аренда
+      .row
+        .col-12
+          .ObjectsPage_filterWrapper
+            .Filter.Filter-objectsPage.ObjectsPage_filter.hidden-xlMinus
+              .Filter_items
+                .FilterElement.Filter_item
+                  .dropdown
+                    a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger Купить
+                    ul.dropdown-menu.FilterElementDropdown.FilterElement_dropdown
+                      li.dropdown-item.FilterElementDropdown_item
+                        .RadioButton
+                          input(type="radio" name="action_type" value="buy_property" id="buy_property" checked).RadioButton_input
+                          label(for="buy_property").RadioButton_label Купить
+                      li.dropdown-item.FilterElementDropdown_item
+                        .RadioButton
+                          input(type="radio" name="action_type" value="rent_property" id="rent_property").RadioButton_input
+                          label(for="rent_property").RadioButton_label Снять
+                .FilterElement.Filter_item
+                  .dropdown
+                    a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger Жилая недвижимость
+                    ul.dropdown-menu.FilterElementDropdown.FilterElement_dropdown.FilterElement_dropdown-propertyType
+                      li.dropdown-item.FilterElementDropdown_item.FilterElementDropdown_item-hasChild
+                        .RadioButton
+                          input(type="radio" name="property_type" value="residental" id="residental" checked).RadioButton_input
+                          label(for="residental").RadioButton_label Жилая недвижимость
+                          .CheckboxList.RadioButton_checkboxList
+                            .Checkbox.CheckboxList_item
+                              input(type="radio" name="residental_type" value="apartments" id="apartments" checked).Checkbox_input
+                              label(for="apartments").Checkbox_label Квартира
+                            .Checkbox.CheckboxList_item
+                              input(type="radio" name="residental_type" value="villa" id="villa").Checkbox_input
+                              label(for="villa").Checkbox_label Дом/Вилла
+                      li.dropdown-item.FilterElementDropdown_item
+                        .RadioButton
+                          input(type="radio" name="property_type" value="land" id="land").RadioButton_input
+                          label(for="land").RadioButton_label Земельный участок
+                      li.dropdown-item.FilterElementDropdown_item
+                        .RadioButton
+                          input(type="radio" name="property_type" value="commercial_premise" id="commercial_premise").RadioButton_input
+                          label(for="commercial_premise").RadioButton_label Коммерческая
+                .FilterElement.Filter_item
+                  .dropdown
+                    a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger Город
+                    ul.dropdown-menu.FilterElementDropdown.FilterElement_dropdown.FilterElementDropdown-checkboxList
+                      li.dropdown-item.FilterElementDropdown_item
+                        .CheckboxList.CheckboxList-filterElementDropdown
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="bar" id="bar" checked).Checkbox_input
+                            label(for="bar").Checkbox_label Бар
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="bechichi" id="bechichi").Checkbox_input
+                            label(for="bechichi").Checkbox_label Бечичи
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="bigovo" id="bigovo").Checkbox_input
+                            label(for="bigovo").Checkbox_label Бигово
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="bizikuce" id="bizikuce").Checkbox_input
+                            label(for="bizikuce").Checkbox_label Bizikuce
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="budva" id="budva").Checkbox_input
+                            label(for="budva").Checkbox_label Будва
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="buljarica" id="buljarica").Checkbox_input
+                            label(for="buljarica").Checkbox_label Buljarica
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="dobrota" id="dobrota").Checkbox_input
+                            label(for="dobrota").Checkbox_label Доброта
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="drobni_pesak" id="drobni_pesak").Checkbox_input
+                            label(for="drobni_pesak").Checkbox_label Дробни песак
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="dzhenovichi" id="dzhenovichi").Checkbox_input
+                            label(for="dzhenovichi").Checkbox_label Дженовичи
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="herzeg_novi" id="herzeg_novi").Checkbox_input
+                            label(for="herzeg_novi").Checkbox_label Херцег Нови
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="kamenovo" id="kamenovo").Checkbox_input
+                            label(for="kamenovo").Checkbox_label Kamenovo
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="kotor" id="kotor").Checkbox_input
+                            label(for="kotor").Checkbox_label Котор
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="krashichi" id="krashichi").Checkbox_input
+                            label(for="krashichi").Checkbox_label Крашичи
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="krimovica" id="krimovica").Checkbox_input
+                            label(for="krimovica").Checkbox_label Кримовица
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="lastva" id="lastva").Checkbox_input
+                            label(for="lastva").Checkbox_label Ластва
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="lepetane" id="lepetane").Checkbox_input
+                            label(for="lepetane").Checkbox_label Лепетане
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="lushtica" id="lushtica").Checkbox_input
+                            label(for="lushtica").Checkbox_label Луштица
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="petrovac" id="petrovac").Checkbox_input
+                            label(for="petrovac").Checkbox_label Петровац
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="podgorica" id="podgorica").Checkbox_input
+                            label(for="podgorica").Checkbox_label Подгорица
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="prchan" id="prchan").Checkbox_input
+                            label(for="prchan").Checkbox_label Прчан
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="przhno_milocher" id="przhno_milocher").Checkbox_input
+                            label(for="przhno_milocher").Checkbox_label Пржно-Милочер
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="radanovici" id="radanovici").Checkbox_input
+                            label(for="radanovici").Checkbox_label Radanovici
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="rafailovichi" id="rafailovichi").Checkbox_input
+                            label(for="rafailovichi").Checkbox_label Рафаиловичи
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="rezhevichi" id="rezhevichi").Checkbox_input
+                            label(for="rezhevichi").Checkbox_label Режевичи
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="risan" id="risan").Checkbox_input
+                            label(for="risan").Checkbox_label Рисан
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="stoliv" id="stoliv").Checkbox_input
+                            label(for="stoliv").Checkbox_label Stoliv
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="sutomore" id="sutomore").Checkbox_input
+                            label(for="sutomore").Checkbox_label Sutomore
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="sveti_stefan" id="sveti_stefan").Checkbox_input
+                            label(for="sveti_stefan").Checkbox_label Свети Стефан
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="tivat" id="tivat").Checkbox_input
+                            label(for="tivat").Checkbox_label Тиват
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="ulcin" id="ulcin").Checkbox_input
+                            label(for="ulcin").Checkbox_label Ульцин
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_city[]" value="zhabliak" id="zhabliak").Checkbox_input
+                            label(for="zhabliak").Checkbox_label Жабляк
+                .FilterElement.Filter_item
+                  .dropdown
+                    a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger Цена
+                    ul.dropdown-menu.FilterElementDropdown.FilterElement_dropdown
+                      li.dropdown-item.FilterElementDropdown_item
+                        .FilterElementDropdown_fields
+                          input(type="number" name="price_from" placeholder="Цена от" min="0").FormText
+                          input(type="number" name="price_to" placeholder="Цена до" min="0").FormText
+                .FilterElement.Filter_item
+                  .dropdown
+                    a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger К-во спален
+                    ul.dropdown-menu.FilterElementDropdown.FilterElementDropdown-checkboxList.FilterElement_dropdown
+                      li.dropdown-item.FilterElementDropdown_item
+                        .CheckboxList.CheckboxList-filterElementDropdown
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_bedrooms_number[]" value="0" id="0").Checkbox_input
+                            label(for="0").Checkbox_label Студия
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_bedrooms_number[]" value="1" id="1").Checkbox_input
+                            label(for="1").Checkbox_label 1 спальня
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_bedrooms_number[]" value="2" id="2").Checkbox_input
+                            label(for="2").Checkbox_label 2 спальни
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_bedrooms_number[]" value="3" id="3").Checkbox_input
+                            label(for="3").Checkbox_label 3 спальни
+                          .Checkbox.CheckboxList_item
+                            input(type="checkbox" name="property_bedrooms_number[]" value="4" id="4").Checkbox_input
+                            label(for="4").Checkbox_label 4 и более
+                .FilterElement.Filter_item
+                  input(type="text" name="property_number" placeholder="Код объекта").FilterElement_formText
+              .Filter_actions
+                button(type="submit").BtnInfo.BtnInfo-search.BtnInfo-rounded Поиск
+      .ObjectCards.ObjectCards-objectsPage.ObjectsPage_objectCards
+        .ObjectCards_items
+          .row
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Квартира с 1 спальней в Будве, район Розино
+                  .ObjectCard_description
+                    p Продажа Будва № S400 На продажу квартира с 1 спальней в новом доме, район Розино. Паркет.
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 1 спальня - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €65,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €1,711
+                .ObjectCard_id ID S400
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_16.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_17.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_18.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_19.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_20.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_21.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_22.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_23.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_24.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_25.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Вилла люкс в Будве с видом на море и c бассейном
+                  .ObjectCard_description
+                    p Продажа Вилла в Будве № S304 На продажу шикарная 3-х этажная вилла с панорамным видом на
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 4 спальни - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €1,600,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €4,507
+                .ObjectCard_id ID S304
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Квартира с 1 спальней в Будве, район Розино
+                  .ObjectCard_description
+                    p Продажа Будва № S400 На продажу квартира с 1 спальней в новом доме, район Розино. Паркет.
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 1 спальня - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €65,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €1,711
+                .ObjectCard_id ID S400
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_16.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_17.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_18.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_19.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_20.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_21.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_22.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_23.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_24.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_25.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Вилла люкс в Будве с видом на море и c бассейном
+                  .ObjectCard_description
+                    p Продажа Вилла в Будве № S304 На продажу шикарная 3-х этажная вилла с панорамным видом на
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 4 спальни - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €1,600,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €4,507
+                .ObjectCard_id ID S304
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Квартира с 1 спальней в Будве, район Розино
+                  .ObjectCard_description
+                    p Продажа Будва № S400 На продажу квартира с 1 спальней в новом доме, район Розино. Паркет.
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 1 спальня - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €65,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €1,711
+                .ObjectCard_id ID S400
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_16.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_17.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_18.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_19.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_20.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_21.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_22.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_23.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_24.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_25.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Вилла люкс в Будве с видом на море и c бассейном
+                  .ObjectCard_description
+                    p Продажа Вилла в Будве № S304 На продажу шикарная 3-х этажная вилла с панорамным видом на
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 4 спальни - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €1,600,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €4,507
+                .ObjectCard_id ID S304
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Квартира с 1 спальней в Будве, район Розино
+                  .ObjectCard_description
+                    p Продажа Будва № S400 На продажу квартира с 1 спальней в новом доме, район Розино. Паркет.
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 1 спальня - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €65,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €1,711
+                .ObjectCard_id ID S400
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_16.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_17.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_18.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_19.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_20.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_21.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_22.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_23.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_24.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_25.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Вилла люкс в Будве с видом на море и c бассейном
+                  .ObjectCard_description
+                    p Продажа Вилла в Будве № S304 На продажу шикарная 3-х этажная вилла с панорамным видом на
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 4 спальни - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €1,600,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €4,507
+                .ObjectCard_id ID S304
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Квартира с 1 спальней в Будве, район Розино
+                  .ObjectCard_description
+                    p Продажа Будва № S400 На продажу квартира с 1 спальней в новом доме, район Розино. Паркет.
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 1 спальня - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €65,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €1,711
+                .ObjectCard_id ID S400
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_16.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_17.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_18.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_19.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_20.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_21.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_22.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_23.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_24.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_25.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Вилла люкс в Будве с видом на море и c бассейном
+                  .ObjectCard_description
+                    p Продажа Вилла в Будве № S304 На продажу шикарная 3-х этажная вилла с панорамным видом на
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 4 спальни - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €1,600,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €4,507
+                .ObjectCard_id ID S304
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Квартира с 1 спальней в Будве, район Розино
+                  .ObjectCard_description
+                    p Продажа Будва № S400 На продажу квартира с 1 спальней в новом доме, район Розино. Паркет.
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 1 спальня - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €65,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €1,711
+                .ObjectCard_id ID S400
+            .col-12.col-md-6.col-xl-3.ObjectCards_col
+              .ObjectCard
+                .ObjectCard_label Будва
+                .ObjectCard_mediaWrapper
+                  .swiper.ObjectMediaSwiper
+                    .swiper-wrapper
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_1.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_2.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_3.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_4.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_5.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_6.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_7.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_8.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_9.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_10.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_11.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_12.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_13.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_14.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_15.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_16.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_17.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_18.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_19.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_20.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_21.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_22.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_23.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_24.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                      .swiper-slide
+                        a(href="/object.html").ObjectMediaSwiper_wrapper
+                          img(data-src="/img/objects/2_25.webp").ObjectMediaSwiper_img.swiper-lazy
+                          .swiper-lazy-preloader
+                    .swiper-button-prev.ObjectMediaSwiper_prev
+                    .swiper-button-next.ObjectMediaSwiper_next
+                .ObjectCard_textWrapper
+                  h3.ObjectCard_title
+                    a(href="/object.html") Вилла люкс в Будве с видом на море и c бассейном
+                  .ObjectCard_description
+                    p Продажа Вилла в Будве № S304 На продажу шикарная 3-х этажная вилла с панорамным видом на
+                  a(href="/object.html").ObjectCard_moreLink показать
+                .ObjectCharacteristics.ObjectCard_characteristics
+                  .ObjectCharacteristic.ObjectCharacteristic-location.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value Будва
+                  .ObjectCharacteristic.ObjectCharacteristic-square.ObjectCharacteristics_item
+                    .ObjectCharacteristic_value 4 спальни - 38 m#[sup 2]
+                .ObjectPrices.ObjectCard_prices
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label Цена
+                    .ObjectPrice_value €1,600,000
+                  .ObjectPrice.ObjectPrices_item
+                    .ObjectPrice_label За квадрат
+                    .ObjectPrice_value €4,507
+                .ObjectCard_id ID S304
+        .ObjectCards_bottom
+          .Pagination
+            ul.Pagination_list
+              li.Pagination_item
+                a(href="#").Pagination_prev
+                  i.fa.fa-angle-left
+              li.Pagination_item
+                a(href="#").Pagination_link.Pagination_link-current Страница 1
+              li.Pagination_item
+                a(href="#").Pagination_link 2
+              li.Pagination_item
+                a(href="#").Pagination_link 3
+              li.Pagination_item
+                a(href="#").Pagination_next
+                  i.fa.fa-angle-right
