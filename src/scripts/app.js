@@ -3,9 +3,6 @@ import Swiper, { Navigation, Pagination, Lazy } from 'swiper';
 import Offcanvas from '../../node_modules/bootstrap/js/src/offcanvas';
 import Dropdown from '../../node_modules/bootstrap/js/src/dropdown';
 
-// console.log(Offcanvas);
-console.log(Dropdown);
-
 function checkMobileHeaderPosition (header, mobileHeader) {
 	let headerHeight = header.offsetHeight;
 

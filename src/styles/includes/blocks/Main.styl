@@ -2,3 +2,12 @@
 	padding-bottom 18px
 	box-shadow 0 1px 4px 0 $main-wrapper-shadow-color
 	background-image linear-gradient($light, #f6f6f6)
+	
+	&-contactsPage
+		@media $lgMinus
+			padding-bottom 0
+			box-shadow none
+			background $light
+		
+		@media $lgPlus
+			padding-bottom 50px

@@ -1,1 +1,40 @@
-// .Contacts
+.Contacts
+	padding-bottom 40px
+	
+	&_title
+		margin-bottom 20px
+		font-size 15px
+		line-height 1
+		
+	&_list
+		list-style none
+		padding 0
+		margin 0
+	
+	&_item
+		margin-bottom 30px
+		
+		&:last-child
+			margin-bottom 0
+	
+	&_phone,
+	&_link
+		text-decoration none
+	
+	&_phone
+		color $primary
+		font-size 30px
+		line-height 1
+		
+		&:hover,
+		&:focus
+			color $primary
+	
+	&_link
+		color $info
+		font-size 14px
+		line-height 1
+		
+		&:hover,
+		&:focus
+			color $info

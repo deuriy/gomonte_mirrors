@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    //- meta(name='description' content='')
+    title Gomonte Mirrors
+    link(href="/img/favicon.svg", rel="icon", type="image/svg+xml")
+    link(href="/css/vendor.css", rel="stylesheet")
+    link(href="/css/styles.css", rel="stylesheet")
+    script(src="https://kit.fontawesome.com/c30fa2b82b.js")
+    script(src="/js/vendor.js", defer="")
+    script(src="/js/app.js", defer="")
+  body
+    include ../blocks/MobileSidebar
+    .Wrapper
+      include ../blocks/Header
+      include ../blocks/MobileHeader
+      include ../blocks/MobileFilter
+      main.Main.Main-contactsPage
+        block content
+      include ../blocks/Footer
