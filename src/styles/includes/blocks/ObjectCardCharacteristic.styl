@@ -1,0 +1,23 @@
+.ObjectCardCharacteristic
+	display grid
+	grid-template-columns auto 1fr
+	gap 10px
+	font-size 14px
+	line-height 1.4286
+	color $object-card-characteristic-color
+	
+	&::before
+		content ""
+		width 37px
+		height 33px
+		background-position center center
+		background-repeat no-repeat
+	
+	&-location
+		&::before
+			background-image url('../img/prop-location.webp')
+	
+	&-square
+		&::before
+			margin-top -5px
+			background-image url('../img/prop-area.webp')

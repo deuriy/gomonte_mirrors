@@ -2,6 +2,7 @@ import $ from "jquery";
 import Swiper, { Navigation, Pagination, Lazy } from 'swiper';
 import Offcanvas from '../../node_modules/bootstrap/js/src/offcanvas';
 import Dropdown from '../../node_modules/bootstrap/js/src/dropdown';
+import Collapse from '../../node_modules/bootstrap/js/src/collapse';
 
 function checkMobileHeaderPosition (header, mobileHeader) {
 	let headerHeight = header.offsetHeight;

@@ -1,230 +1,93 @@
-extends layouts/base
+extends layouts/base-object
 
 block content
-  .Banner.hidden-mdMinus(style="background-image: url('../img/budva-bg.webp')")
+  .ObjectPage
+    .container.ObjectPage_imgContainer
+      img(src="/img/property.webp" alt="Квартира с 2 спальнями в Будве, неделеко от моря, Адок, паркинг в гараже").ObjectPage_img
     .container
-      .row
-        .col-12
-          .Filter.Banner_filter.hidden-xlMinus
-            .Filter_items
-              .FilterElement.Filter_item
-                .dropdown
-                  a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger Купить
-                  ul.dropdown-menu.FilterElementDropdown.FilterElement_dropdown
-                    li.dropdown-item.FilterElementDropdown_item
-                      .RadioButton
-                        input(type="radio" name="action_type" value="buy_property" id="buy_property" checked).RadioButton_input
-                        label(for="buy_property").RadioButton_label Купить
-                    li.dropdown-item.FilterElementDropdown_item
-                      .RadioButton
-                        input(type="radio" name="action_type" value="rent_property" id="rent_property").RadioButton_input
-                        label(for="rent_property").RadioButton_label Снять
-              .FilterElement.Filter_item
-                .dropdown
-                  a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger Жилая недвижимость
-                  ul.dropdown-menu.FilterElementDropdown.FilterElement_dropdown.FilterElement_dropdown-propertyType
-                    li.dropdown-item.FilterElementDropdown_item.FilterElementDropdown_item-hasChild
-                      .RadioButton
-                        input(type="radio" name="property_type" value="residental" id="residental" checked).RadioButton_input
-                        label(for="residental").RadioButton_label Жилая недвижимость
-                        .CheckboxList.RadioButton_checkboxList
-                          .Checkbox.CheckboxList_item
-                            input(type="radio" name="residental_type" value="apartments" id="apartments" checked).Checkbox_input
-                            label(for="apartments").Checkbox_label Квартира
-                          .Checkbox.CheckboxList_item
-                            input(type="radio" name="residental_type" value="villa" id="villa").Checkbox_input
-                            label(for="villa").Checkbox_label Дом/Вилла
-                    li.dropdown-item.FilterElementDropdown_item
-                      .RadioButton
-                        input(type="radio" name="property_type" value="land" id="land").RadioButton_input
-                        label(for="land").RadioButton_label Земельный участок
-                    li.dropdown-item.FilterElementDropdown_item
-                      .RadioButton
-                        input(type="radio" name="property_type" value="commercial_premise" id="commercial_premise").RadioButton_input
-                        label(for="commercial_premise").RadioButton_label Коммерческая
-              .FilterElement.Filter_item
-                .dropdown
-                  a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger Город
-                  ul.dropdown-menu.FilterElementDropdown.FilterElement_dropdown.FilterElementDropdown-checkboxList
-                    li.dropdown-item.FilterElementDropdown_item
-                      .CheckboxList.CheckboxList-filterElementDropdown
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="bar" id="bar" checked).Checkbox_input
-                          label(for="bar").Checkbox_label Бар
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="bechichi" id="bechichi").Checkbox_input
-                          label(for="bechichi").Checkbox_label Бечичи
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="bigovo" id="bigovo").Checkbox_input
-                          label(for="bigovo").Checkbox_label Бигово
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="bizikuce" id="bizikuce").Checkbox_input
-                          label(for="bizikuce").Checkbox_label Bizikuce
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="budva" id="budva").Checkbox_input
-                          label(for="budva").Checkbox_label Будва
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="buljarica" id="buljarica").Checkbox_input
-                          label(for="buljarica").Checkbox_label Buljarica
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="dobrota" id="dobrota").Checkbox_input
-                          label(for="dobrota").Checkbox_label Доброта
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="drobni_pesak" id="drobni_pesak").Checkbox_input
-                          label(for="drobni_pesak").Checkbox_label Дробни песак
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="dzhenovichi" id="dzhenovichi").Checkbox_input
-                          label(for="dzhenovichi").Checkbox_label Дженовичи
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="herzeg_novi" id="herzeg_novi").Checkbox_input
-                          label(for="herzeg_novi").Checkbox_label Херцег Нови
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="kamenovo" id="kamenovo").Checkbox_input
-                          label(for="kamenovo").Checkbox_label Kamenovo
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="kotor" id="kotor").Checkbox_input
-                          label(for="kotor").Checkbox_label Котор
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="krashichi" id="krashichi").Checkbox_input
-                          label(for="krashichi").Checkbox_label Крашичи
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="krimovica" id="krimovica").Checkbox_input
-                          label(for="krimovica").Checkbox_label Кримовица
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="lastva" id="lastva").Checkbox_input
-                          label(for="lastva").Checkbox_label Ластва
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="lepetane" id="lepetane").Checkbox_input
-                          label(for="lepetane").Checkbox_label Лепетане
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="lushtica" id="lushtica").Checkbox_input
-                          label(for="lushtica").Checkbox_label Луштица
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="petrovac" id="petrovac").Checkbox_input
-                          label(for="petrovac").Checkbox_label Петровац
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="podgorica" id="podgorica").Checkbox_input
-                          label(for="podgorica").Checkbox_label Подгорица
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="prchan" id="prchan").Checkbox_input
-                          label(for="prchan").Checkbox_label Прчан
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="przhno_milocher" id="przhno_milocher").Checkbox_input
-                          label(for="przhno_milocher").Checkbox_label Пржно-Милочер
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="radanovici" id="radanovici").Checkbox_input
-                          label(for="radanovici").Checkbox_label Radanovici
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="rafailovichi" id="rafailovichi").Checkbox_input
-                          label(for="rafailovichi").Checkbox_label Рафаиловичи
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="rezhevichi" id="rezhevichi").Checkbox_input
-                          label(for="rezhevichi").Checkbox_label Режевичи
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="risan" id="risan").Checkbox_input
-                          label(for="risan").Checkbox_label Рисан
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="stoliv" id="stoliv").Checkbox_input
-                          label(for="stoliv").Checkbox_label Stoliv
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="sutomore" id="sutomore").Checkbox_input
-                          label(for="sutomore").Checkbox_label Sutomore
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="sveti_stefan" id="sveti_stefan").Checkbox_input
-                          label(for="sveti_stefan").Checkbox_label Свети Стефан
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="tivat" id="tivat").Checkbox_input
-                          label(for="tivat").Checkbox_label Тиват
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="ulcin" id="ulcin").Checkbox_input
-                          label(for="ulcin").Checkbox_label Ульцин
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_city[]" value="zhabliak" id="zhabliak").Checkbox_input
-                          label(for="zhabliak").Checkbox_label Жабляк
-              .FilterElement.Filter_item
-                .dropdown
-                  a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger Цена
-                  ul.dropdown-menu.FilterElementDropdown.FilterElement_dropdown
-                    li.dropdown-item.FilterElementDropdown_item
-                      .FilterElementDropdown_fields
-                        input(type="number" name="price_from" placeholder="Цена от" min="0").FormText
-                        input(type="number" name="price_to" placeholder="Цена до" min="0").FormText
-              .FilterElement.Filter_item
-                .dropdown
-                  a(href="#" data-bs-toggle="dropdown" aria-expanded="false").dropdown-toggle.FilterMenuTrigger К-во спален
-                  ul.dropdown-menu.FilterElementDropdown.FilterElementDropdown-checkboxList.FilterElement_dropdown
-                    li.dropdown-item.FilterElementDropdown_item
-                      .CheckboxList.CheckboxList-filterElementDropdown
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_bedrooms_number[]" value="0" id="0").Checkbox_input
-                          label(for="0").Checkbox_label Студия
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_bedrooms_number[]" value="1" id="1").Checkbox_input
-                          label(for="1").Checkbox_label 1 спальня
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_bedrooms_number[]" value="2" id="2").Checkbox_input
-                          label(for="2").Checkbox_label 2 спальни
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_bedrooms_number[]" value="3" id="3").Checkbox_input
-                          label(for="3").Checkbox_label 3 спальни
-                        .Checkbox.CheckboxList_item
-                          input(type="checkbox" name="property_bedrooms_number[]" value="4" id="4").Checkbox_input
-                          label(for="4").Checkbox_label 4 и более
-              .FilterElement.Filter_item
-                input(type="text" name="property_number" placeholder="Код объекта").FilterElement_formText
-            .Filter_actions
-              button(type="submit").BtnInfo.BtnInfo-search Поиск
-  .Frontpage
-    .container
-      .Services.Frontpage_services.hidden-lgMinus
-        .Services_items
-          .row
-            .col-6
-              .Service.Services_item.Services_item-rent
-                .row
-                  .col-12
-                    h2.Service_title
-                      a(href="#") Аренда
-                .row
-                  .col-4
-                    .ServicesMenu.Service_menu
-                      ul.ServicesMenu_list
-                        li.ServicesMenu_item
-                          a(href="#").ServicesMenu_link Посуточная аренда
-                        li.ServicesMenu_item
-                          a(href="#").ServicesMenu_link На круглый год
-                        li.ServicesMenu_item
-                          a(href="#").ServicesMenu_link Всё лето
-                  .col-8
-                    .row
-                      .col-4
-                        img(src="/img/header-rent-icon-1.webp" alt="Rent").Service_img
-                      .col-8
-                        .Service_textWrapper
-                          h3.Service_subTitle Комфортабельные апартаменты в #[br]Черногории
-                          .Service_description Для жизни и отдыха на берегу Адриатического моря
-            .col-6
-              .Service.Services_item
-                h2.Service_title
-                  a(href="/sale.html") Продажа
-                .Service_description Только свежие и актуальные предложения по продаже недвижимости в Черногории с разными ценами на любой вкус. Профессиональный подход и юридическое сопровождение.
-        .Services_buttons
-          .row
-            .col-6
-              a(href="#").BtnSuccess.BtnSuccess-services.BtnSuccess-rounded.Services_btn.Services_btn-rent Все варианты аренды
-            .col-6
-              a(href="#").BtnSuccess.BtnSuccess-services.BtnSuccess-rounded.Services_btn.Services_btn-sale Все варианты продажи
-      .HeroSection.Frontpage_heroSection.hidden-lgPlus
-        h1.HeroSection_title Аренда и продажа апартаментов и домов в Черногории
-        .HeroSection_text
-          p Лучшие предложения по продаже недвижимости в Черногориии с разными ценами на любой вкус. При покупке недвижимости в подарок вы получите Вид на жительство.
-      .Buttons.Frontpage_buttons.hidden-lgPlus
-        a(href="/rent.html").BtnSuccessLight.BtnSuccessLight-uppercase Арендовать
-        a(href="/sale.html").BtnSecondary.BtnSecondary-uppercase Купить
-      .ObjectCards.Frontpage_objectCards
+      .ObjectPage_btnWrapper
+        a(href="#").BtnOutline Больше материалов
+      h1.ObjectPage_title Квартира с 2 спальнями в Будве, неделеко от моря, Адок, паркинг в гараже №1300
+      .Accordion.ObjectPage_accordion
+        .AccordionPanel.Accordion_item
+          h3.AccordionPanel_header#ObjectLocationHeader(data-bs-toggle="collapse" data-bs-target="#ObjectLocationBody" aria-expanded="true" aria-controls="ObjectLocationBody") Расположение и стоимость
+          .AccordionPanel_body.accordion-collapse.collapse.show#ObjectLocationBody(aria-labelledby="ObjectLocationHeader")
+            .ObjectCharacteristics
+              ul.ObjectCharacteristics_list
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-check
+                  span.ObjectCharacteristic_title №
+                  span.ObjectCharacteristic_value 1300
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-flag
+                  span.ObjectCharacteristic_title Город:
+                  a(href="#").ObjectCharacteristic_value.ObjectCharacteristic_value-city Будва
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-tag
+                  span.ObjectCharacteristic_title на год:
+                  span.ObjectCharacteristic_value.ObjectCharacteristic_value-price € 400
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-clone
+                  span.ObjectCharacteristic_title К-во комнат:
+                  span.ObjectCharacteristic_value 3
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-bed
+                  span.ObjectCharacteristic_title Спальни:
+                  span.ObjectCharacteristic_value 2
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-bath
+                  span.ObjectCharacteristic_title Санузлов:
+                  span.ObjectCharacteristic_value 2
+        .AccordionPanel.Accordion_item
+          h3.AccordionPanel_header#ObjectCharacteristicsHeader(data-bs-toggle="collapse" data-bs-target="#ObjectCharacteristicsBody" aria-expanded="true" aria-controls="ObjectCharacteristicsBody") Характеристики
+          .AccordionPanel_body.accordion-collapse.collapse.show#ObjectCharacteristicsBody(aria-labelledby="ObjectCharacteristicsHeader")
+            .ObjectCharacteristics
+              ul.ObjectCharacteristics_list
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Кухня
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Интернет
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value ТВ
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Стиральная машина
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Кондиционер
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Фен
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Гладильная доска
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Бесплатная Парковка
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Wi-Fi
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Отопление
+                li.ObjectCharacteristic.ObjectCharacteristics_item
+                  i.fa.fa-angle-right
+                  span.ObjectCharacteristic_value Терраса
+        .AccordionPanel.Accordion_item
+          h3.AccordionPanel_header#ObjectDescriptionHeader(data-bs-toggle="collapse" data-bs-target="#ObjectDescriptionBody" aria-expanded="true" aria-controls="ObjectDescriptionBody") Описание недвижимости
+          .AccordionPanel_body.accordion-collapse.collapse.show#ObjectDescriptionBody(aria-labelledby="ObjectDescriptionHeader")
+            .ObjectPage_description
+              p Квартира с 2 спальнями в Будве, неделеко от моря, Адок, паркинг в гараже
+              p Аренда Будва № 1300 Сдается квартира с 2 спальнями на круглый год недалеко от моря, район Адок, 2 этаж. Паркет. Две большие террасы, одна застекленная. Два санузла, есть ванна. парковка в гараже.
+    .Map#Map
+    .ObjectCards.ObjectCards-similar.ObjectPage_objectCards
+      .container
         .row
           .col-12
-            h2.ObjectCards_title Лучшие предложения
+            h2.ObjectCards_title Похожие Объекты
         .ObjectCards_items
           .row
             .col-12.col-md-6.col-xl-3.ObjectCards_col
@@ -663,5 +526,22 @@ block content
                     .ObjectPrice_label За квадрат
                     .ObjectPrice_value €4,507
                 .ObjectCard_id ID S304
-        .ObjectCards_bottom
-          a(href="#").BtnSuccess.ObjectCards_btn Показать все
+  script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDwr6iF7UcoJMHQdGlGHC0aA_mPdgUH0rA&#038;libraries=places&#038;ver=5.8.4')
+  script.
+    google.maps.event.addDomListener(window, 'load', function () {
+      var map = new google.maps.Map(document.getElementById("Map"), {
+        center: new google.maps.LatLng(42.289073485211,18.848066840557),
+        zoom:15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        //- scrollwheel: '1'
+        scrollwheel: false
+      });
+
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(42.289073485211,18.848066840557),
+        map: map,
+        animation: google.maps.Animation.DROP,
+        icon: 'https://gomonte.me/wp-content/uploads/2020/02/marker-1.png'
+      });
+      marker.setMap(map);
+    });

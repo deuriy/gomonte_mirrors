@@ -1,0 +1,25 @@
+.AccordionPanel
+	border-bottom 1px solid $accordion-panel-border
+	
+	&_header
+		display grid
+		grid-template-columns 1fr auto
+		gap 15px
+		align-items center
+		padding 7px 0 10px
+		font-size 18px
+		cursor pointer
+		transition all .2s linear
+		
+		&::after
+			content "\f106"
+			font-family 'FontAwesome'
+			font-size 14px
+		
+		&:hover,
+		&:focus
+			color $accordion-panel-hover
+		
+		&.collapsed
+			&::after
+				transform rotate(180deg)

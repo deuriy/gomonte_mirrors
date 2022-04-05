@@ -1,23 +1,23 @@
 .ObjectCharacteristic
-	display grid
-	grid-template-columns auto 1fr
-	gap 10px
-	font-size 14px
-	line-height 1.4286
-	color $object-characteristic-color
+	display flex
+	align-items center
+	font-size 15px
+	line-height 1.867
 	
-	&::before
-		content ""
-		width 37px
-		height 33px
-		background-position center center
-		background-repeat no-repeat
+	i
+		margin-right 10px
+		color $filter-link
 	
-	&-location
-		&::before
-			background-image url('../img/prop-location.webp')
+	&_title
+		margin-right 3px
+		font-size 14px
+		color $object-characteristic-color
 	
-	&-square
-		&::before
-			margin-top -5px
-			background-image url('../img/prop-area.webp')
+	&_value
+		&-city
+			text-decoration none
+			color $primary
+		
+		&-price
+			font-size 18px
+			line-height 1.34
