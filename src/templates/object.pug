@@ -82,7 +82,7 @@ block content
             .ObjectPage_description
               p Квартира с 2 спальнями в Будве, неделеко от моря, Адок, паркинг в гараже
               p Аренда Будва № 1300 Сдается квартира с 2 спальнями на круглый год недалеко от моря, район Адок, 2 этаж. Паркет. Две большие террасы, одна застекленная. Два санузла, есть ванна. парковка в гараже.
-    .Map#Map
+    //- .Map#Map
     .ObjectCards.ObjectCards-similar.ObjectPage_objectCards
       .container
         .row
@@ -526,22 +526,22 @@ block content
                     .ObjectPrice_label За квадрат
                     .ObjectPrice_value €4,507
                 .ObjectCard_id ID S304
-  script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDwr6iF7UcoJMHQdGlGHC0aA_mPdgUH0rA&#038;libraries=places&#038;ver=5.8.4')
-  script.
-    google.maps.event.addDomListener(window, 'load', function () {
-      var map = new google.maps.Map(document.getElementById("Map"), {
-        center: new google.maps.LatLng(42.289073485211,18.848066840557),
-        zoom:15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        //- scrollwheel: '1'
-        scrollwheel: false
-      });
+  //- script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDwr6iF7UcoJMHQdGlGHC0aA_mPdgUH0rA&#038;libraries=places&#038;ver=5.8.4')
+  //- script.
+  //-   google.maps.event.addDomListener(window, 'load', function () {
+  //-     var map = new google.maps.Map(document.getElementById("Map"), {
+  //-       center: new google.maps.LatLng(42.289073485211,18.848066840557),
+  //-       zoom:15,
+  //-       mapTypeId: google.maps.MapTypeId.ROADMAP,
+  //-       //- scrollwheel: '1'
+  //-       scrollwheel: false
+  //-     });
 
-      var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(42.289073485211,18.848066840557),
-        map: map,
-        animation: google.maps.Animation.DROP,
-        icon: 'https://gomonte.me/wp-content/uploads/2020/02/marker-1.png'
-      });
-      marker.setMap(map);
-    });
+  //-     var marker = new google.maps.Marker({
+  //-       position: new google.maps.LatLng(42.289073485211,18.848066840557),
+  //-       map: map,
+  //-       animation: google.maps.Animation.DROP,
+  //-       icon: 'https://gomonte.me/wp-content/uploads/2020/02/marker-1.png'
+  //-     });
+  //-     marker.setMap(map);
+  //-   });
