@@ -1,0 +1,40 @@
+.BtnDanger
+  display inline-grid
+  padding 13px 15px
+  border-radius 5px
+  border none
+  outline none
+  background $danger
+  color $light
+  font-size 13px
+  line-height 1.3846
+  font-family $open-sans
+  text-decoration none
+  text-align center
+  transition all .25s
+
+  &:hover
+    color $light
+    background $danger-active
+  
+  &-serviceBlock
+    min-width 180px
+    font-size 15px
+    line-height 1.34
+  
+  &-applicationFormOpen,
+  &-applicationFormSubmit
+    font-size 16px
+    line-height 1.25
+    font-family $textbook-new-web
+  
+  &-applicationFormOpen
+    min-width 180px
+  
+  &-applicationFormSubmit
+    padding-right 11px
+    padding-left 11px
+
+    @media $mdPlus
+      min-width 219px
+      background $danger-active

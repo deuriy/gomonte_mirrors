@@ -1,0 +1,35 @@
+.ServiceBlock
+  display grid
+  grid-template-columns 100%
+  grid-template-rows auto auto 1fr auto
+  justify-items start
+  min-height 415px
+  padding 13px 17px 25px 13px
+  border 2px solid lighten($secondary, 50%)
+  background $light
+  font-family $textbook-new-web
+
+  &_price
+    justify-self end
+    margin-right -34px
+    margin-bottom 20px
+  
+  &_title
+    margin-bottom 20px
+    justify-self stretch
+    font-weight 700
+    font-size 20px
+    line-height 1.25
+    text-align center
+  
+  &_text
+    color $secondary
+    font-size 19px
+    line-height 1.2105
+
+    & > p
+      &:last-child
+        margin-bottom 0
+
+  &_btn
+    justify-self center

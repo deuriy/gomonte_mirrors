@@ -1,0 +1,24 @@
+.Breadcrumbs
+  &_list
+    list-style none
+    display flex
+    margin-bottom 0
+    padding-left 0
+  
+  &_item
+    color: $secondary
+    font-family $textbook-new-web
+    font-size 11px
+    line-height 1.2727
+    
+    &::after
+      content '-'
+      margin-right 3px
+      margin-left 3px
+    
+    &:last-child::after
+      display none
+  
+  &_link
+    color $secondary
+    text-decoration none

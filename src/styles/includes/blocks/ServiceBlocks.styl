@@ -1,0 +1,47 @@
+.ServiceBlocks
+  padding-top 12px
+  padding-bottom 28px
+  
+  &_title
+    // margin-bottom 8px
+    margin-bottom 17px
+  
+  &_col
+    display grid
+    grid-template-columns 100%
+    justify-items start
+    margin-right 16px
+    margin-bottom 35px
+
+    &:last-child
+      margin-bottom 0
+  
+  &_item
+    margin-bottom 17px
+
+    &:last-child
+      margin-bottom 0
+  
+  &_moreLink
+    position relative
+    margin-right 11px
+    justify-self end
+    font-family $textbook-new-web
+    color lighten($grey, 50%)
+    text-decoration none
+
+    &::after
+      content ''
+      position absolute
+      right 0
+      bottom 0
+      left 0
+      height 1px
+      background lighten($grey, 50%)
+      transition all .2s ease-in
+    
+    &:hover
+      color lighten($grey, 50%)
+
+      &::after
+        background transparent

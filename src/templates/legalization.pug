@@ -1,0 +1,154 @@
+extends layouts/base
+
+block content
+  .LegalizationPage
+    .Container
+      .Breadcrumbs.LegalizationPage_breadcrumbs
+        ul.Breadcrumbs_list
+          li.Breadcrumbs_item
+            a(href="/").Breadcrumbs_link Главная
+          li.Breadcrumbs_item
+            a(href="/our_services.html").Breadcrumbs_link Наши услуги
+      .Legalization
+        h2.SectionTitle.SectionTitle-small.Legalization_title Легализоваться в Черногории быстро и просто
+        .Legalization_imgWrapper
+          img(src="/img/legalization_img.webp", alt="Легализация в Черногории").Legalization_img
+        .Legalization_text
+          p Получите вид на жительство в Черногории #[br]при персональном сопровождении #[br]миграционных экспертов компании GoMonte для Вас и Ваших близких. #[br]До конца года действует акция #[br]“При покупке недвижимости вид на жительство в подарок”
+        .Legalization_btnWrapper
+          a(href="#").BtnDanger Заказать консультацию
+      .Advantages
+        .swiper.AdvantagesSwiper
+          .swiper-wrapper
+            .swiper-slide.AdvantagesSwiper_slide
+              .AdvantageBox
+                .AdvantageBox_iconWrapper
+                  img(src="/img/advantages/shield.webp", alt="Shield").AdvantageBox_icon
+                h3.AdvantageBox_title Быстро #[br]и качественно
+                .AdvantageBox_text
+                  p Получите вид на жительство по одной из программ всего за #[br]1 месяц
+            .swiper-slide.AdvantagesSwiper_slide
+              .AdvantageBox
+                .AdvantageBox_iconWrapper
+                  img(src="/img/advantages/quote.webp", alt="Quote").AdvantageBox_icon
+                h3.AdvantageBox_title Бесплатная консультация
+                .AdvantageBox_text
+                  p Консуультируйте в GoMonte онлайн не выходя из дома
+            .swiper-slide.AdvantagesSwiper_slide
+              .AdvantageBox
+                .AdvantageBox_iconWrapper
+                  img(src="/img/advantages/user.webp", alt="User").AdvantageBox_icon
+                h3.AdvantageBox_title Лучшие менеджеры
+                .AdvantageBox_text
+                  p На каждом этапе программы с Вами лучший специалист
+      .ServiceBlocks
+        h2.SectionTitle.ServiceBlocks_title Программмы получения вида на жительство #[br]в Черногории
+        .ServiceBlocks_list
+          .ServiceBlocks_col
+            .ServiceBlock.ServiceBlocks_item
+              .Price.ServiceBlock_price от 300 €
+              h3.ServiceBlock_title На основании трудоустройства
+              .ServiceBlock_text
+                p Мы помогаем с легальным трудоустройством в местные компании, а также со сбором всех документов и переводов
+              a(href="#").BtnDanger.BtnDanger-serviceBlock.ServiceBlock_btn Оформить
+            a(href="#").ServiceBlocks_moreLink Узнать подробнее
+          .ServiceBlocks_col
+            .ServiceBlock.ServiceBlocks_item
+              .Price.ServiceBlock_price от 350 €
+              h3.ServiceBlock_title На основании #[br]открытия фирмы
+              .ServiceBlock_text
+                p Самый простой и быстрый способ получить вид на жительство в Черногории, процедура оформления занимает до 7 дней
+              a(href="#").BtnDanger.BtnDanger-serviceBlock.ServiceBlock_btn Оформить
+            a(href="#").ServiceBlocks_moreLink Узнать подробнее
+          .ServiceBlocks_col
+            .ServiceBlock.ServiceBlocks_item
+              .Price.ServiceBlock_price от 150 €
+              h3.ServiceBlock_title На основании #[br]покупки недвижимости
+              .ServiceBlock_text
+                p Приобретая недвижимость в Черногории, собрав необходимые документы, вы получаете вид на жителство уже через 30 дней
+              a(href="#").BtnDanger.BtnDanger-serviceBlock.ServiceBlock_btn Оформить
+            a(href="#").ServiceBlocks_moreLink Узнать подробнее
+          .ServiceBlocks_col
+            .ServiceBlock.ServiceBlocks_item
+              .Price.ServiceBlock_price от 150 €
+              h3.ServiceBlock_title На основании #[br]воссоединения с семьей
+              .ServiceBlock_text
+                p Хотите перевезти свою семью в Черногорию? Поможем быстро собрать необходимые документы для всех членов семьи
+              a(href="#").BtnDanger.BtnDanger-serviceBlock.ServiceBlock_btn Оформить
+            a(href="#").ServiceBlocks_moreLink Узнать подробнее
+      .ServiceBlocks
+        h2.SectionTitle.SectionTitle-center.ServiceBlocks_title Дополнительные #[br]виды услуг
+        .ServiceBlocks_list
+          .ServiceBlocks_col
+            .ServiceBlock.ServiceBlocks_item
+              .Price.ServiceBlock_price от 300 €
+              h3.ServiceBlock_title Справка #[br]о несудимости
+              .ServiceBlock_text
+                p Помощь в оформлении справок о несудимости (Украина, Россия, Белоруссия)
+              a(href="#").BtnDanger.BtnDanger-serviceBlock.ServiceBlock_btn Оформить
+            a(href="#").ServiceBlocks_moreLink Узнать подробнее
+          .ServiceBlocks_col
+            .ServiceBlock.ServiceBlocks_item
+              .Price.ServiceBlock_price от 300 €
+              h3.ServiceBlock_title Судебный перевод документов
+              .ServiceBlock_text
+                p Предоставление судебных переводов документов любой сложности: договора, спарвки
+              a(href="#").BtnDanger.BtnDanger-serviceBlock.ServiceBlock_btn Оформить
+            a(href="#").ServiceBlocks_moreLink Узнать подробнее
+          .ServiceBlocks_col
+            .ServiceBlock.ServiceBlocks_item
+              .Price.ServiceBlock_price от 300 €
+              h3.ServiceBlock_title Договор #[br]аренды жилья
+              .ServiceBlock_text
+                p Поможем официально сосатвить и заверить договор аренды жилья для ВНЖ или переезда в Черногорию
+              a(href="#").BtnDanger.BtnDanger-serviceBlock.ServiceBlock_btn Оформить
+            a(href="#").ServiceBlocks_moreLink Узнать подробнее
+          .ServiceBlocks_col
+            .ServiceBlock.ServiceBlocks_item
+              .Price.ServiceBlock_price от 300 €
+              h3.ServiceBlock_title Сопровождение #[br]фирмы
+              .ServiceBlock_text
+                p Компания предоставляет полное бухгалтерское и юридическое сопровождение Вашего бизнеса в Черногории
+              a(href="#").BtnDanger.BtnDanger-serviceBlock.ServiceBlock_btn Оформить
+            a(href="#").ServiceBlocks_moreLink Узнать подробнее
+      .ApplicationForm.LegalizationPage_applicationForm
+        .ApplicationForm_textWrapper
+          .ApplicationForm_textWrapperInner
+            h2.ApplicationForm_title Вид на жительство #[br]в Черногории
+            .ApplicationForm_description
+              p.hidden-mdPlus Оставьте заявку и получите #[br]бесплатную консультацию #[br]по программе уже сейчас!
+              p.hidden-mdMinus получение вида на жительство при #[br]персональном сопровождении #[br]миграционных экспертов для #[br]Вас и Ваших близких
+        .ApplicationForm_btnWrapper.hidden-mdPlus
+          button(type="button").BtnDanger.BtnDanger-applicationFormOpen.ApplicationForm_showFormBtn Оставить заявку
+        .ApplicationForm_fieldsWrapper
+          button(type="button").ApplicationForm_closeBtn
+          h2.ApplicationForm_formTitle.hidden-mdMinus Заполните заявку
+          .ApplicationForm_formDescription.hidden-mdMinus
+            p и получите бесплатную консультацию #[br]по программе уже сейчас!
+          .ApplicationForm_fields
+            .ApplicationForm_field
+              input(type="text" name="name" id="name" placeholder=" " required).ApplicationForm_formText
+              label(for="name").ApplicationForm_label Ваше имя #[span.required.ApplicationForm_required *]
+            .ApplicationForm_field
+              input(type="tel" name="phone" id="phone" placeholder=" " required).ApplicationForm_formText
+              label(for="phone").ApplicationForm_label Контактный телефон #[span.required.ApplicationForm_required *]
+            .ApplicationForm_field
+              input(type="email" name="email" id="email" placeholder=" " required).ApplicationForm_formText
+              label(for="email").ApplicationForm_label Email для связи #[span.required.ApplicationForm_required *]
+          .ApplicationForm_actions
+            button(type="submit").BtnDanger.BtnDanger-applicationFormSubmit.ApplicationForm_submitBtn Получить консультацию
+          .ApplicationForm_note
+            p Оставляя заявку вы соглашаетесь #[br]на обработку #[a(href="#") персональных данных]
+      .Stock
+        h2.SectionTitle.SectionTitle-center.Stock_title Наши акции при покупке недвижимости
+        .Stock_imgWrapper
+          img(src="/img/stock.webp", alt="Акции").Stock_img
+        .Stock_offer Купите недвижимость #[br]в Черногории и получите #[br]вид на жительство в подарок
+        .Stock_description Мы ценим наших клиентов и всегда рады предложить не только выгодные условия, но и дарить подарки. До конца 2022 года #[br]в компании GoMonte действует акция #[br]“При покупке недвижимости вид #[br]на жительство в подарок”.
+        a(href="#").BtnDanger.Stock_orderBtn Заказать консультацию
+      .ApartmentBooking
+        h2.ApartmentBooking_title Сервис онлайн-бронирования #[br]и покупки квартир
+
+block page_bottom
+  script(src="/js/legalization.js") 
+          
